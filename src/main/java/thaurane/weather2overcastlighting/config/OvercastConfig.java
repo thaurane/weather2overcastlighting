@@ -13,7 +13,6 @@ public final class OvercastConfig {
     public static final ForgeConfigSpec.DoubleValue darknessAtFull;
     public static final ForgeConfigSpec.DoubleValue darknessScale;
     public static final ForgeConfigSpec.DoubleValue smoothingPerTick;
-    public static final ForgeConfigSpec.BooleanValue debugLogging;
 
     static {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
@@ -50,10 +49,6 @@ public final class OvercastConfig {
         smoothingPerTick = builder
                 .comment("Maximum amount darkness can change per client tick.")
                 .defineInRange("smoothingPerTick", 0.0025D, 0.0001D, 1.0D);
-
-        debugLogging = builder
-                .comment("Write compact diagnostic lines every five seconds.")
-                .define("debugLogging", true);
 
         builder.pop();
         SPEC = builder.build();

@@ -6,13 +6,11 @@ public final class OvercastState {
 
     private static float currentDarkness = 0.0F;
     private static float targetDarkness = 0.0F;
-    private static Layer1Coverage.Result lastCoverage = Layer1Coverage.Result.ZERO;
 
     private OvercastState() {
     }
 
     public static void updateTarget(Layer1Coverage.Result coverage) {
-        lastCoverage = coverage;
         targetDarkness = darknessFromCoverage(coverage.adjustedCoverage());
 
         float step = OvercastConfig.smoothingPerTick.get().floatValue();
@@ -22,19 +20,10 @@ public final class OvercastState {
     public static void reset() {
         currentDarkness = 0.0F;
         targetDarkness = 0.0F;
-        lastCoverage = Layer1Coverage.Result.ZERO;
     }
 
     public static float currentDarkness() {
         return currentDarkness;
-    }
-
-    public static float targetDarkness() {
-        return targetDarkness;
-    }
-
-    public static Layer1Coverage.Result lastCoverage() {
-        return lastCoverage;
     }
 
     private static float darknessFromCoverage(float coverage) {
