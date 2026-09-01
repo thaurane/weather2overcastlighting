@@ -31,12 +31,6 @@ The project already contains a local Weather2 Morphologies jar in:
 That jar is used only as a compile/runtime dependency for development.
 It is NOT bundled inside the finished companion mod jar.
 
-Windows:
-  gradlew.bat build
-
-Output:
-  build/libs/weather2-overcast-lighting-0.0.1.jar
-
 Runtime
 -------
 Install:
@@ -52,14 +46,3 @@ After first launch:
   config/weather2overcastlighting-client.toml
 
 The defaults match the layer 1 darkness behavior previously tested inside Weather2.
-
-Debug
------
-Search latest.log for:
-  [W2OL DEBUG]
-
-A startup line should also appear:
-  [W2OL] Client event handlers registered on MinecraftForge.EVENT_BUS
-
-If the startup line appears but no W2OL DEBUG lines appear while in a world, that
-immediately tells us the runtime event subscription is the problem.
