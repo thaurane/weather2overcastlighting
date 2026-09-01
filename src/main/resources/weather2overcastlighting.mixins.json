@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "thaurane.weather2overcastlighting.client.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "ClientWeatherHelperMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
